@@ -1,0 +1,25 @@
+{
+    "$id": "https://example.com/person.schema.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "description": "",
+    "type": "object",
+    "properties": {
+      "firstName": {
+        "type": "string",
+        "maxLength": 5
+      },
+      "lastName": {
+        "type": "string"
+      },
+      "age": {
+        "type": "number",
+        "minimum": 16,
+        "maximum": 90
+      },
+      "address": {
+        "type": "string",
+        "tdi-ruleset": ["A1", "B1"] 
+      }
+    },
+    "required": [ "firstName", "lastName" ]
+  }

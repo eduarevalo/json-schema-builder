@@ -1,0 +1,22 @@
+<form [formGroup]="form" [style.border]="!isValid ? '2px solid red' : 'none'">
+
+    <app-question
+        *ngFor="let name of sortedQuestions;trackBy: trackByName"
+        [control]="getControl(name)" 
+        [options]="getOptions(name)"></app-question>
+
+</form>
+
+
+<button> Back </button>
+<button [disabled]="!isValid" > Next </button>
+
+<pre>
+    {{ form.value | json }}
+</pre>
+
+<!--
+<button (click)="buttonClick($event)">Remove Required Validator</button>
+<button (click)="buttonClick2($event)">Add Max Length 5 Validator</button>
+<button (click)="buttonClick3($event)">Subscribe On Changes</button>
+-->

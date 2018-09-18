@@ -1,0 +1,12 @@
+<label>
+    {{ options.name }}
+    <input [type]="options.type ==='number' ? 'number': 'text'" [formControl]="control">
+</label>
+
+<div *ngIf="!control.valid">
+  Error: {{control.errors | json }}
+</div>
+
+<pre>
+    Value: {{ control.value | json }}
+</pre>
